@@ -1,0 +1,35 @@
+.pagination-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1dvh;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.page-btn{
+    color: rgb(240, 240, 240);
+    background-color: rgb(66, 37, 195);
+    border: 2.5px solid rgb(240, 240, 240);
+    border-radius: 5px;
+    text-align: center;
+    vertical-align: middle;
+    font-family: "Kanit";
+    cursor: pointer;
+    height: 6dvh;
+    width: 6dvh;
+}
+
+.page-btn-checked{
+    background-color: rgb(240, 240, 240);
+    color: rgb(66, 37, 195);
+    border: 2.5px solid rgb(66, 37, 195);
+    border-radius: 5px;
+    text-align: center;
+    vertical-align: middle;
+    font-family: "Kanit";
+    font-weight: 600;
+    height: 6dvh;
+    width: 7dvh;
+}
