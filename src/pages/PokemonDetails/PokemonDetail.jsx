@@ -76,7 +76,7 @@ function PokemonDetails(){
             <span>{pokemon.name}</span>
             <img 
             className="size-80" 
-            src={pokemon.sprites.front_default}
+            src={pokemon.sprites.other["official-artwork"].front_default}
             onClick={() => handleCry(pokemon)}
             />
             <div>{pokemon.types.map((t, i) => <span key={i}>{t.type.name} </span>)}</div>

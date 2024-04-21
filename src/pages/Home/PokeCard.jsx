@@ -42,9 +42,9 @@ function PokeCard(props){
     );
 
     return(
-        <Link to={`/PokemonDetails/${props.index}`} state={{pokemon: props.pokemon}}>
+        <Link to={`/PokemonDetails/${props.index}`} state={{pokemon: props.pokemon}} className="lg:w-[12%] md:w-[20%] sm:w-1/4">
         <div key={props.index} className="max-w-40 rounded overflow-hidden shadow-lg bg-gray-200 hover:scale-105 transition duration-300 p-0"
-        onClick={() => handleCry(props.pokemon)}>
+        /* onClick={() => handleCry(props.pokemon)} */>
             <img className="size-40" src={ props.shiny ? props.pokemon.sprites.front_shiny : props.pokemon.sprites.front_default} alt={props.pokemon.name}/>
             <div className="px-2 py-1 text-center bg-cyan-400 text-blue-950 border-y-2 border-blue-950">
                 <p className="font-bold text-md">{`#${props.pokemon.id} ` + capitalize(props.pokemon.name)}</p>
