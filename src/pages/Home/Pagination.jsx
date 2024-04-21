@@ -1,5 +1,4 @@
 import PropTypes from "prop-types"
-import "./pagination.css"
 
 function Pagination(props){
 
@@ -10,15 +9,29 @@ function Pagination(props){
     }
 
     return(
-        <div className="pagination-container">
-            {props.page>0 && <button className="page-btn" onClick={() => props.setPage(0)}>{"<<"}</button>}
+        <div className="flex justify-center items-center gap-3 my-4">
+            {props.page>0 && 
+            <button className="btn-page" 
+            onClick={() => props.setPage(0)}>
+                {"<<"}
+            </button>}
             {
                 [0,1,2,3,4,5,6].map(n => 
-                <button className={"page-btn" + ((n==3) ? "-checked":"")} key={n} hidden={showBtn(n)} onClick={() => {
+                <button key={n}
+                disabled={n==3}
+                className={`${showBtn(n) ? "hidden": ""} btn-page`} 
+                onClick={() => {
                     props.setPage(props.page+n-3)
-                }}>{props.page+n-2}</button>)
+                }}>
+                    {props.page+n-2}
+                </button>)
             }
-            {props.page<max-1 && <button className="page-btn" onClick={() => props.setPage(max-1)}>{">>"}</button>}
+            {props.page<max-1 && 
+            <button 
+            className="btn-page" 
+            onClick={() => props.setPage(max-1)}>
+                {">>"}
+            </button>}
         </div>
     )
     

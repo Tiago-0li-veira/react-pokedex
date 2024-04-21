@@ -8,7 +8,9 @@ function PokemonDetails(){
     
     const [loading, setLoading] = useState(true);
     const [moves, setMoves] = useState([]);
-    // const [evoChain, setEvoChain] = useState([]);
+    const [evoChain, setEvoChain] = useState([]);
+
+    
 
     const typeColors = {
         "fire": "bg-red-500 text-white",
@@ -82,7 +84,11 @@ function PokemonDetails(){
             <div>Weight: {pokemon.weight}</div>
             <div 
             className="flex flex-wrap justify-center items-center gap-4">
-            {moves.map((m, i) => moveCard(m,i))}
+            {moves.slice(0, 20).map((m, i) => moveCard(m,i))}
+            </div>
+            <div>
+                {pokemon.abilities.map((a,i) => 
+                <span key={i}>{a.ability.name} </span>)}
             </div>
         </div>
     );

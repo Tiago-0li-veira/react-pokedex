@@ -31,7 +31,7 @@ function App(){
     };
 
     return(
-        <div className="min-h-screen">
+        <div className="min-h-screen pb-2">
         <Routes>
             <Route path="/" element={<Home data={data} loading={loading}/>}/>
             <Route path="/PokemonDetails/:id" element={<PokemonDetails/>}/>

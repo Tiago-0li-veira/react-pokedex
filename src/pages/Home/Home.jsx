@@ -5,19 +5,18 @@ import Pagination from "./Pagination";
 import Navbar from "./Navbar";
 
 function Home(props) {
-    const pokePerPage = 20;
+    const pokePerPage = 21;
     const [page, setPage] = useState(0);
     const [pokeList, setPokeList] = useState([]);
     const [searchData, setSearchData] = useState([]);
     const [searchQuery, setSearchQuery] = useState("");
     const [shiny, setShiny] = useState(false);
 
-   
-
+    
     useEffect(() => {
-      const startIndex = page * pokePerPage;
-      const endIndex = startIndex + pokePerPage;
-      setPokeList(searchData.slice(startIndex, endIndex));
+        const startIndex = page * pokePerPage;
+        const endIndex = startIndex + pokePerPage;
+        setPokeList(searchData.slice(startIndex, endIndex));
     }, [page, searchData]);
 
     useEffect(() => {
@@ -37,6 +36,7 @@ function Home(props) {
                 setSearchQuery={setSearchQuery}
                 shiny={shiny}
                 setShiny={setShiny}
+                data={props.data}
             />
             <Pagination 
                 page={page} 

@@ -18,3 +18,9 @@ body{
         src: url("src/assets/PKMN RBYGSC.ttf") format(ttf);
     }
 }
+
+@layer components{
+    .btn-page {
+        @apply btn size-12 text-xs rounded-3xl bg-cyan-500 text-white border-0 shadow hover:bg-cyan-600 hover:rounded-2xl hover:scale-110 disabled:bg-white disabled:text-cyan-800 disabled:rounded-2xl disabled:scale-110 transition-all duration-300;
+    }
+}
