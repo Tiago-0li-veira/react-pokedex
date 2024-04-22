@@ -57,6 +57,7 @@ function PokemonDetails(){
         }
     };
 
+
     const moveCard = (move, key) => 
         <div key={key}
         className={`${typeColors[move.type.name]} rounded-md p-1 border-2 w-40`}>

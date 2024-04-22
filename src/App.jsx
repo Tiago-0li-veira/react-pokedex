@@ -31,7 +31,7 @@ function App(){
     };
 
     return(
-        <div className="min-h-screen pb-2">
+        <div className="min-h-screen pb-2 custom-font">
         <Routes>
             <Route path="/" element={<Home data={data} loading={loading}/>}/>
             <Route path="/PokemonDetails/:id" element={<PokemonDetails/>}/>

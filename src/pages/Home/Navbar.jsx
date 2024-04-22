@@ -28,17 +28,17 @@ const [randId, setRandId] = useState(0);
             src="https://seeklogo.com/images/P/Pokemon-logo-497D61B223-seeklogo.com.png"
             />
             <button
-            className="btn border-0 rounded-xl p-2 transition-all duration-300 hover:bg-white hover:text-red-400 bg-red-300 text-white" 
+            className="btn border-0 rounded-xl p-2 text-xs font-thin transition-all duration-300 hover:bg-white hover:text-red-400 bg-red-300 text-white" 
             onClick={handleShiny}>Shiny</button>
             <Link to={`/PokemonDetails/${randId}`} state={{pokemon: props.data[randId]}}>
             <button 
-            className="btn border-0 rounded-xl p-2  transition-all duration-300 hover:bg-white hover:text-red-400 bg-red-300 text-white"
+            className="btn border-0 rounded-xl p-2 text-xs font-thin transition-all duration-300 hover:bg-white hover:text-red-400 bg-red-300 text-white"
             >
                 Random!
             </button>
             </Link>
             <input
-                className="h-10 w-40 rounded-xl px-3 focus:scale-105 transition-all duration-300 focus:outline-none bg-red-400 text-white placeholder-white" 
+                className="h-10 w-40 rounded-xl px-3 focus:scale-105 transition-all duration-300 focus:outline-none bg-red-400 text-white placeholder-white text-[10px]" 
                 type="text"
                 placeholder="Search Pokémon..."
                 onChange={(e) => props.setSearchQuery(e.target.value)}>
