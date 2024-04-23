@@ -16,10 +16,11 @@ function Pagination(props){
                 {"<<"}
             </button>}
             {
-                [0,1,2,3,4,5,6].map(n => 
+                [1,2,3,4,5].map(n => 
                 <button key={n}
                 disabled={n==3}
-                className={`${showBtn(n) ? "hidden": ""} btn-page`} 
+                className={`${showBtn(n) ? "hidden": ""
+                                } btn-page`} 
                 onClick={() => {
                     props.setPage(props.page+n-3)
                 }}>

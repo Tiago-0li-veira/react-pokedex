@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
+import StatChart from "./StatChart";
 
 function PokemonDetails(){
     const location = useLocation();
@@ -8,9 +9,6 @@ function PokemonDetails(){
     
     const [loading, setLoading] = useState(true);
     const [moves, setMoves] = useState([]);
-    const [evoChain, setEvoChain] = useState([]);
-
-    
 
     const typeColors = {
         "fire": "bg-red-500 text-white",
@@ -43,6 +41,7 @@ function PokemonDetails(){
         console.log(pokemon)
     }, []);
 
+
     const fetchMovesData = async () => {
         try{
             setLoading(true);
@@ -57,11 +56,16 @@ function PokemonDetails(){
         }
     };
 
+    const capitalize = (str) => {
+        return str.split("-")
+                .map(s => s.charAt(0).toUpperCase() + s.slice(1))
+                .join("-");
+    }
 
     const moveCard = (move, key) => 
         <div key={key}
-        className={`${typeColors[move.type.name]} rounded-md p-1 border-2 w-40`}>
-            <div>{move.name}</div>
+        className={`${typeColors[move.type.name]} rounded-md p-1 border-[3px] w-40 text-[13px]`}>
+            <div>{capitalize(move.name)}</div>
             <div>{move.type.name}</div>
             <div></div>
         </div>
@@ -73,8 +77,13 @@ function PokemonDetails(){
     }
 
     return(
+        <>
+        
+
         <div className="flex flex-col justify-center justify-items-center items-center text-black text-center">
-            <span>{pokemon.name}</span>
+            <span
+            className="text-3xl mt-3 p-5 bg-gray-200 rounded-xl text-blue-950 border-blue-950 border-[5px]"
+            >#{pokemon.id} {capitalize(pokemon.name)}</span>
             <img 
             className="size-80" 
             src={pokemon.sprites.other["official-artwork"].front_default}
@@ -91,7 +100,12 @@ function PokemonDetails(){
                 {pokemon.abilities.map((a,i) => 
                 <span key={i}>{a.ability.name} </span>)}
             </div>
+            <StatChart
+            labels={pokemon.stats.map(s => s.stat.name)}
+            data={pokemon.stats.map(s => s.base_stat)}
+            ></StatChart>
         </div>
+        </>
     );
 }
 
