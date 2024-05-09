@@ -100,10 +100,13 @@ function PokemonDetails(){
                 {pokemon.abilities.map((a,i) => 
                 <span key={i}>{a.ability.name} </span>)}
             </div>
+            <div
+            className="min-w-96">
             <StatChart
             labels={pokemon.stats.map(s => s.stat.name)}
             data={pokemon.stats.map(s => s.base_stat)}
             ></StatChart>
+            </div>
         </div>
         </>
     );
